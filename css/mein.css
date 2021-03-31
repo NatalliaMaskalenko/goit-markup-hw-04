@@ -14,6 +14,7 @@ body {
   --background-color-elements: #f5f4fa;
   --color-text-major: #212121;
   --color-text-main: #757575;
+  --color-icon: #afb1b8;
 }
 
 .visually-hidden {
@@ -126,11 +127,17 @@ img {
   color: var(--color-text-main);
   text-decoration: none;
 }
+.contacts-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
 
-.pagination-link :hover,
-.pagination-link :focus,
+.pagination-link:hover,
+.pagination-link:focus,
 .contacts-link:hover,
-.contacts-link:focus {
+.contacts-link:focus,
+.contacts-link:hover .contacts-icon,
+.contacts-link:focus .contacts-icon {
   color: var(--color-accent);
 }
 
@@ -143,16 +150,29 @@ img {
 }
 
 .contacts-link {
+  display: flex;
+  align-items: center;
   color: var(--color-text-main);
 }
 
 /* Контент главной страницы */
 /* Герой */
 .hero {
-  background-color: var(--color-dark);
-  /* min-height: 100vh; */
-  min-height: 600px;
   padding-top: 200px;
+  padding-bottom: 200px;
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: var(--color-dark);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/background/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -214,6 +234,17 @@ img {
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc(100% / 4 - 30px);
+}
+
+.description-icon {
+  padding: 25px 100px 25px 100px;
+  background-color: var(--background-color-elements);
+  margin-bottom: 30px;
+}
+
+.description .icon {
+  width: 70px;
+  height: 70px;
 }
 
 .subtitle {
@@ -294,7 +325,6 @@ img {
 
 .team-container {
   padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .team-subject {
@@ -316,6 +346,40 @@ img {
   letter-spacing: 0.03em;
 
   margin-bottom: 0;
+}
+
+.networks {
+  display: flex;
+  padding: 16px 32px 30px 32px;
+}
+
+.networks-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.networks-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.networks-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-icon);
+}
+
+.networks-link:hover,
+.networks-link:focus {
+  background-color: var(--color-accent);
+}
+
+.networks-link:hover .networks-icon,
+.networks-link:focus .networks-icon {
+  fill: var(--color-white);
 }
 
 /* Контент страницы портфолио */
