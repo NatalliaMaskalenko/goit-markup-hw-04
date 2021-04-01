@@ -240,9 +240,11 @@ img {
   padding: 25px 100px 25px 100px;
   background-color: var(--background-color-elements);
   margin-bottom: 30px;
+  border-radius: 4px;
 }
 
 .description .icon {
+  display: block;
   width: 70px;
   height: 70px;
 }
@@ -348,13 +350,17 @@ img {
   margin-bottom: 0;
 }
 
-.networks {
+.team .networks {
   display: flex;
+  margin-left: -10px;
+  margin-top: -10px;
   padding: 16px 32px 30px 32px;
 }
 
-.networks-item:not(:last-child) {
-  margin-right: 10px;
+.team .networks-item {
+  margin-left: 10px;
+  margin-top: 10px;
+  flex-basis: calc(100% / 4 - 10px);
 }
 
 .networks-link {
@@ -380,6 +386,46 @@ img {
 .networks-link:hover .networks-icon,
 .networks-link:focus .networks-icon {
   fill: var(--color-white);
+}
+
+/* Постоянные клиенты */
+.clients {
+  padding: 94px 0 94px 0;
+}
+
+.clients-list {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.clients-item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc(100% / 6 - 30px);
+}
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+
+  border: 1px solid var(--color-icon);
+  border-radius: 4px;
+}
+
+.clients-icon {
+  fill: var(--color-icon);
+}
+
+.clients-link:hover,
+.clients-link:focus,
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  border-color: var(--color-accent);
+  fill: var(--color-accent);
 }
 
 /* Контент страницы портфолио */
@@ -416,6 +462,8 @@ img {
 .button:focus {
   background-color: var(--color-accent);
   color: var(--color-white);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .gallery-container {
   padding: 20px 24px;
@@ -439,6 +487,17 @@ img {
 
 .portfolio .grid {
   flex-wrap: wrap;
+}
+
+.gallery-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-link:focus .gallery-wrap,
+.gallery-link:hover .gallery-wrap {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .gallery-title {
@@ -467,9 +526,23 @@ img {
   padding-bottom: 60px;
   border-top: 1px solid #000000;
 }
-.footer .logo {
+
+.footer-wrap {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+  align-items: baseline;
+}
+
+.footer section {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc(100% / 4 - 30px);
+}
+
+.footer-adress .logo {
   display: block;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 
 .footer .tiny {
@@ -480,6 +553,7 @@ img {
   color: var(--color-white);
   margin-bottom: 9px;
 }
+
 .address-item {
   color: rgba(255, 255, 255, 0.6);
 
@@ -502,4 +576,35 @@ img {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+.footer-networks .networks {
+  display: flex;
+}
+
+.footer-networks .networks-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-networks-title {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-white);
+
+  margin-bottom: 20px;
+}
+
+.footer-networks .networks-icon {
+  fill: var(--color-white);
+}
+
+.footer-networks .networks-link {
+  background-color: rgb(255, 255, 255, 0.1);
+}
+
+.footer-networks .networks-link:focus,
+.footer-networks .networks-link:hover {
+  background-color: var(--color-accent);
 }
