@@ -237,7 +237,11 @@ img {
 }
 
 .description-icon {
-  padding: 25px 100px 25px 100px;
+  display: flex;
+  width: 270px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
   background-color: var(--background-color-elements);
   margin-bottom: 30px;
   border-radius: 4px;
